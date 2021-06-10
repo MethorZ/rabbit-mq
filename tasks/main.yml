@@ -1,0 +1,24 @@
+---
+##
+# Setup RabbitMQ
+##
+
+##
+# Import variable definitions and defaults
+##
+- name: IMPORT_TASKS | Setup Variable definitions / defaults
+  import_tasks: setup-variables.yml
+
+##
+# Setup the OS based on family
+##
+- name: IMPORT_TASKS | Setup percona mysql for OS
+  import_tasks: "setup-Debian.yml"
+  when:
+    - ansible_facts['os_family'] == 'Debian'
+
+##
+# Configuration and setup
+##
+#- name: IMPORT_TASKS | Configure mongo db
+#  import_tasks: "configure-mongodb.yml"

@@ -1,0 +1,7 @@
+# Set to true to enable rabbitmq
+rabbitmq_enabled: false
+
+rabbitmq_packages_mode: present
+
+# You can control installed version via this param.
+rabbitmq_version: 3.7

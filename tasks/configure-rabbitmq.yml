@@ -1,0 +1,19 @@
+---
+##
+# Configure the database
+##
+
+- block:
+
+  - name: TEMPLATE | Apply mongod.conf template
+    template:
+      src: "mongod.conf.j2"
+      dest: "{{ mongodb_config }}"
+      owner: root
+      group: root
+      mode: 0644
+    notify: restart mongodb
+
+  when: mongodb_enabled
+
+- meta: flush_handlers

@@ -1,0 +1,7 @@
+##
+# Beware: handlers are executed in the order they are written in this file, when executing multiple handlers
+##
+- name: restart rabbitmq
+  service:
+    name: rabbitmq-server
+    state: restarted

@@ -1,0 +1,18 @@
+galaxy_info:
+  role_name: rabbitmq
+  author: MethorZ
+  description: Ansible rabbitmq support for Debian
+  company: MethorZ
+  license: license (BSD, MIT)
+  min_ansible_version: 2.7
+  platforms:
+    - name: Debian
+      versions:
+        - all
+  galaxy_tags:
+    - development
+    - rabbitmq
+    - queue
+    - message
+
+dependencies: []

@@ -1,0 +1,22 @@
+---
+#
+# Setup all required packages
+#
+- block:
+
+  - name: APT | Updating the apt cache
+    apt:
+      update_cache: yes
+
+  - name: APT | Make sure rabbitmq packages are installed
+    apt:
+      name: "{{ rabbitmq_packages }}"
+      state: "{{ rabbitmq_packages_mode }}"
+
+  - name: SYSTEMD | Enable and start the rabbitmq service
+    systemd:
+      name: "{{ rabbitmq_service }}"
+      enabled: yes
+      state: started
+
+  when: rabbitmq_enabled

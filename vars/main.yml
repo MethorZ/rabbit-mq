@@ -1,0 +1,8 @@
+---
+# Dependencies for mongo db
+__rabbitmq_packages:
+  - rabbitmq-server
+
+__rabbitmq_service: rabbitmq-server
+
+__rabbitmq_config: /etc/rabbitmq.conf
