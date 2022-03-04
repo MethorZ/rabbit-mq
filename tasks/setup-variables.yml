@@ -6,34 +6,19 @@
   - name: INCLUDE_VARS | OS specific vars
     include_vars: "{{ ansible_facts['os_family'] }}.yml"
 
-  - name: FACTS - Define MongoDB package dependencies
+  - name: FACTS - Define RabbitMQ package dependencies
     set_fact:
-      mongodb_packages: "{{ __mongodb_packages | list }}"
-    when: mongodb_packages is not defined
+      rabbitmq_packages: "{{ __rabbitmq_packages | list }}"
+    when: rabbitmq_packages is not defined
 
-  - name: FACTS - Define the MongoDB service / daemon
+  - name: FACTS - Define the RabbitMQ service / daemon
     set_fact:
-      mongodb_service: "{{ __mongodb_service }}"
-    when: mongodb_service is not defined
+      rabbitmq_service: "{{ __rabbitmq_service }}"
+    when: rabbitmq_service is not defined
 
-  - name: FACTS - Define keyserver for MongoDB
+  - name: FACTS - Define RabbitMQ config file
     set_fact:
-      mongodb_keyserver: "{{ __mongodb_keyserver }}"
-    when: mongodb_keyserver is not defined
-
-  - name: FACTS - Define key id for MongoDB
-    set_fact:
-      mongodb_key_id: "{{ __mongodb_key_id }}"
-    when: mongodb_key_id is not defined
-
-  - name: FACTS - Define repository for Percona MySQL
-    set_fact:
-      mongodb_repository: "{{ __mongodb_repository }}"
-    when: mongodb_repository is not defined
-
-  - name: FACTS - Define mongo db config file
-    set_fact:
-      mongodb_config: "{{ __mongodb_config }}"
-    when: mongodb_config is not defined
+      rabbitmq_config: "{{ __rabbitmq_config }}"
+    when: rabbitmq_config is not defined
 
   when: rabbitmq_enabled

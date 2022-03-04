@@ -5,4 +5,4 @@ __rabbitmq_packages:
 
 __rabbitmq_service: rabbitmq-server
 
-__rabbitmq_config: /etc/rabbitmq.conf
+__rabbitmq_config: /etc/rabbitmq/rabbitmq-env.conf

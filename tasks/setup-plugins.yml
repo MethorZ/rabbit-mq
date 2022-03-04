@@ -1,0 +1,15 @@
+---
+##
+# Configure the rabbit queue plugins
+##
+
+- block:
+
+  - name: PLUGIN | Enables the rabbitmq_management plugin
+    community.rabbitmq.rabbitmq_plugin:
+      names: rabbitmq_management
+      state: "{{ rabbitmq_plugin_management }}"
+
+  when: rabbitmq_enabled
+
+- meta: flush_handlers

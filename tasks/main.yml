@@ -20,5 +20,8 @@
 ##
 # Configuration and setup
 ##
-#- name: IMPORT_TASKS | Configure mongo db
-#  import_tasks: "configure-mongodb.yml"
+- name: IMPORT_TASKS | Configure rabbitmq
+  import_tasks: "configure-rabbitmq.yml"
+
+- name: IMPORT_TASKS | Setup plugins
+  import_tasks: "setup-plugins.yml"

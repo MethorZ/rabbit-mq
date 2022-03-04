@@ -1,19 +1,19 @@
 ---
 ##
-# Configure the database
+# Configure the rabbit queue
 ##
 
 - block:
 
-  - name: TEMPLATE | Apply mongod.conf template
+  - name: TEMPLATE | Apply rabbitmq-env.conf template
     template:
-      src: "mongod.conf.j2"
-      dest: "{{ mongodb_config }}"
+      src: "rabbitmq-env.conf.j2"
+      dest: "{{ rabbitmq_config }}"
       owner: root
       group: root
       mode: 0644
-    notify: restart mongodb
+    notify: restart rabbitmq
 
-  when: mongodb_enabled
+  when: rabbitmq_enabled
 
 - meta: flush_handlers

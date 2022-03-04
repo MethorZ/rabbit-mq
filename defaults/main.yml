@@ -1,7 +1,23 @@
+---
+##
+# RabbitMQ default configuration
+##
+
+
 # Set to true to enable rabbitmq
 rabbitmq_enabled: false
 
+# Packages mode
 rabbitmq_packages_mode: present
 
-# You can control installed version via this param.
-rabbitmq_version: 3.7
+# Node name of the rabbit server. Defaults to rabbit
+rabbitmq_nodename: rabbit
+
+# Bind address
+rabbitmq_bind_address: 127.0.0.1
+
+# Port
+rabbitmq_port: 5672
+
+# Plugins
+rabbitmq_plugin_management: disabled
